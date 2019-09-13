@@ -23,6 +23,9 @@ _CIFAR_DATASET_DIR = './datasets/CIFAR'
 _IMAGENET_DATASET_DIR = './datasets/IMAGENET/ILSVRC2012'
 _PLACES205_DATASET_DIR = './datasets/Places205'
 
+'''#Download using torchvision
+torchvision.datasets.CIFAR10(_CIFAR_DATASET_DIR, train=True, transform=None, target_transform=None, download=True)
+'''
 
 def buildLabelIndex(labels):
     label2inds = {}

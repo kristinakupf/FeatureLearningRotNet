@@ -5,6 +5,7 @@ import time
 
 from . import Algorithm
 from pdb import set_trace as breakpoint
+import tensorflow as tf
 
 
 def accuracy(output, target, topk=(1,)):
@@ -73,6 +74,8 @@ class FeatureClassificationModel(Algorithm):
                     feat_var[i] = Variable(feat_var[i].data, volatile=(not do_train))
             else:
                 feat_var = Variable(feat_var.data, volatile=(not do_train))
+
+
         pred_var = self.networks['classifier'](feat_var)
         #********************************************************
 

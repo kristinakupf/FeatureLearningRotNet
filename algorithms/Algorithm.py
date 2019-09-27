@@ -1,3 +1,4 @@
+
 """Define a generic class for training and testing learning algorithms."""
 from __future__ import print_function
 import os
@@ -12,7 +13,7 @@ import torch.optim
 import utils
 import datetime
 import logging
-
+import tensorflow as tf
 from pdb import set_trace as breakpoint
 
 class Algorithm():

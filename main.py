@@ -69,6 +69,9 @@ if args_opt.checkpoint > 0: # load checkpoint
     algorithm.load_checkpoint(args_opt.checkpoint, train= (not args_opt.evaluate))
 
 if not args_opt.evaluate: # train the algorithm
+    print('\n\nnum workers {}'.format(dloader_train.num_workers))
+    print('\n\nepoch size {}'.format(dloader_train.epoch_size))
+
     algorithm.solve(dloader_train, dloader_test)
 else:
     algorithm.evaluate(dloader_test) # evaluate the algorithm

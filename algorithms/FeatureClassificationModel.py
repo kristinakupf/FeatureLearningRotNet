@@ -67,7 +67,10 @@ class FeatureClassificationModel(Algorithm):
         #********************************************************
 
         #************ FORWARD PROPAGATION ***********************
+        #print ('\n\nnetworks are {}\n\n'.format(self.networks))
+
         feat_var = self.networks['feat_extractor'](dataX_var, out_feat_keys=out_feat_keys)
+
         if not finetune_feat_extractor:
             if isinstance(feat_var, (list, tuple)):
                 for i in range(len(feat_var)):
@@ -75,7 +78,7 @@ class FeatureClassificationModel(Algorithm):
             else:
                 feat_var = Variable(feat_var.data, volatile=(not do_train))
 
-
+        #print('\n\nfeature variable dimensions {}'.format(len(feat_var)))
         pred_var = self.networks['classifier'](feat_var)
         #********************************************************
 

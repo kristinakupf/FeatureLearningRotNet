@@ -1,0 +1,80 @@
+2019-09-30 10:59:14,610 - algorithms.Algorithm - INFO   - Algorithm options {'max_num_epochs': 100, 'disp_step': 50, 'algorithm_type': 'FeatureClassificationModel', 'criterions': {'loss': {'opt': None, 'ctype': 'CrossEntropyLoss'}}, 'data_test_opt': {'unsupervised': False, 'batch_size': 128, 'epoch_size': None, 'random_sized_crop': False, 'split': 'test', 'dataset_name': 'cifar10'}, 'exp_dir': './experiments/CIFAR10_MultLayerClassifier_on_RotNet_NIN4blocks_Conv2_feats', 'out_feat_keys': ['conv2'], 'networks': {'classifier': {'opt': {'cls_type': 'MultLayer', 'num_classes': 10, 'nChannels': 12288}, 'def_file': 'architectures/NonLinearClassifier.py', 'optim_params': {'LUT_lr': [(20, 0.1), (40, 0.02), (45, 0.004), (50, 0.0008)], 'nesterov': True, 'optim_type': 'sgd', 'lr': 0.1, 'weight_decay': 0.0005, 'momentum': 0.9}, 'pretrained': None}, 'feat_extractor': {'opt': {'use_avg_on_conv3': False, 'num_stages': 4, 'num_classes': 4}, 'def_file': 'architectures/NetworkInNetwork.py', 'optim_params': None, 'pretrained': './experiments/CIFAR10_RotNet_NIN4blocks/model_net_epoch200'}}, 'best_metric': 'prec1', 'data_train_opt': {'unsupervised': False, 'batch_size': 128, 'epoch_size': None, 'random_sized_crop': False, 'split': 'train', 'dataset_name': 'cifar10'}}
+2019-09-30 10:59:14,611 - algorithms.Algorithm - INFO   - Set network classifier
+2019-09-30 10:59:14,611 - algorithms.Algorithm - INFO   - ==> Initiliaze network classifier from file architectures/NonLinearClassifier.py with opts: {'cls_type': 'MultLayer', 'num_classes': 10, 'nChannels': 12288}
+2019-09-30 10:59:14,724 - algorithms.Algorithm - INFO   - Set network feat_extractor
+2019-09-30 10:59:14,724 - algorithms.Algorithm - INFO   - ==> Initiliaze network feat_extractor from file architectures/NetworkInNetwork.py with opts: {'use_avg_on_conv3': False, 'num_stages': 4, 'num_classes': 4}
+2019-09-30 10:59:14,755 - algorithms.Algorithm - INFO   - ==> Load pretrained parameters from file ./experiments/CIFAR10_RotNet_NIN4blocks/model_net_epoch200:
+2019-09-30 10:59:23,557 - algorithms.Algorithm - INFO   - Initialize criterion[loss]: CrossEntropyLoss with options: None
+2019-09-30 10:59:23,617 - algorithms.Algorithm - INFO   - Initialize optimizer: sgd with params: {'LUT_lr': [(20, 0.1), (40, 0.02), (45, 0.004), (50, 0.0008)], 'nesterov': True, 'optim_type': 'sgd', 'lr': 0.1, 'weight_decay': 0.0005, 'momentum': 0.9} for netwotk: classifier
+2019-09-30 10:59:23,618 - algorithms.Algorithm - INFO   - Training epoch [  1 / 100]
+2019-09-30 10:59:23,618 - algorithms.Algorithm - INFO   - ==> Set to classifier optimizer lr = 0.1000000000
+2019-09-30 10:59:23,618 - algorithms.Algorithm - INFO   - Training: CIFAR10_MultLayerClassifier_on_RotNet_NIN4blocks_Conv2_feats
+2019-09-30 10:59:25,361 - algorithms.Algorithm - INFO   - ==> Iteration [  1][  50 /  390]: {'process_time': 89.8351, 'prec1': [55.0781], 'prec5': [92.7344], 'load_time': 10.1649}
+2019-09-30 10:59:26,177 - algorithms.Algorithm - INFO   - ==> Iteration [  1][ 100 /  390]: {'process_time': 89.7443, 'prec1': [62.0], 'prec5': [94.9922], 'load_time': 10.2557}
+2019-09-30 10:59:27,107 - algorithms.Algorithm - INFO   - ==> Iteration [  1][ 150 /  390]: {'process_time': 88.534, 'prec1': [65.8646], 'prec5': [96.0729], 'load_time': 11.466}
+2019-09-30 10:59:28,143 - algorithms.Algorithm - INFO   - ==> Iteration [  1][ 200 /  390]: {'process_time': 86.8907, 'prec1': [68.0938], 'prec5': [96.7188], 'load_time': 13.1093}
+2019-09-30 10:59:29,140 - algorithms.Algorithm - INFO   - ==> Iteration [  1][ 250 /  390]: {'process_time': 85.9313, 'prec1': [69.6313], 'prec5': [97.0594], 'load_time': 14.0687}
+2019-09-30 10:59:30,087 - algorithms.Algorithm - INFO   - ==> Iteration [  1][ 300 /  390]: {'process_time': 85.6121, 'prec1': [70.8542], 'prec5': [97.3594], 'load_time': 14.3879}
+2019-09-30 10:59:31,014 - algorithms.Algorithm - INFO   - ==> Iteration [  1][ 350 /  390]: {'process_time': 85.4644, 'prec1': [71.7121], 'prec5': [97.5357], 'load_time': 14.5356}
+2019-09-30 10:59:31,852 - algorithms.Algorithm - INFO   - ==> Training stats: {'process_time': 85.5394, 'prec1': [72.307], 'prec5': [97.6706], 'load_time': 14.4606}
+2019-09-30 10:59:31,918 - algorithms.Algorithm - INFO   - Evaluating: CIFAR10_MultLayerClassifier_on_RotNet_NIN4blocks_Conv2_feats
+2019-09-30 10:59:31,918 - algorithms.Algorithm - INFO   - ==> Dataset: cifar10_test [78 images]
+2019-09-30 10:59:33,601 - algorithms.Algorithm - INFO   - ==> Results: {'process_time': 79.5804, 'prec1': [80.9039], 'prec5': [99.11], 'load_time': 20.4196}
+2019-09-30 10:59:33,602 - algorithms.Algorithm - INFO   - ==> Evaluation stats: {'process_time': 79.5804, 'prec1': [80.9039], 'prec5': [99.11], 'load_time': 20.4196}
+2019-09-30 10:59:33,660 - algorithms.Algorithm - INFO   - ==> Best results w.r.t. prec1 metric: epoch: 1 - {'process_time': 79.5804, 'prec1': [80.9039], 'prec5': [99.11], 'load_time': 20.4196}
+2019-09-30 10:59:33,660 - algorithms.Algorithm - INFO   - Training epoch [  2 / 100]
+2019-09-30 10:59:33,660 - algorithms.Algorithm - INFO   - ==> Set to classifier optimizer lr = 0.1000000000
+2019-09-30 10:59:33,660 - algorithms.Algorithm - INFO   - Training: CIFAR10_MultLayerClassifier_on_RotNet_NIN4blocks_Conv2_feats
+2019-09-30 10:59:34,994 - algorithms.Algorithm - INFO   - ==> Iteration [  2][  50 /  390]: {'process_time': 80.707, 'prec1': [79.6094], 'prec5': [98.8594], 'load_time': 19.293}
+2019-09-30 10:59:35,921 - algorithms.Algorithm - INFO   - ==> Iteration [  2][ 100 /  390]: {'process_time': 81.9764, 'prec1': [79.6328], 'prec5': [98.9453], 'load_time': 18.0236}
+2019-09-30 10:59:36,837 - algorithms.Algorithm - INFO   - ==> Iteration [  2][ 150 /  390]: {'process_time': 83.0067, 'prec1': [79.6146], 'prec5': [98.9635], 'load_time': 16.9933}
+2019-09-30 10:59:37,761 - algorithms.Algorithm - INFO   - ==> Iteration [  2][ 200 /  390]: {'process_time': 83.7191, 'prec1': [79.6914], 'prec5': [99.0469], 'load_time': 16.2809}
+2019-09-30 10:59:38,741 - algorithms.Algorithm - INFO   - ==> Iteration [  2][ 250 /  390]: {'process_time': 83.7018, 'prec1': [79.575], 'prec5': [99.0594], 'load_time': 16.2982}
+2019-09-30 10:59:39,742 - algorithms.Algorithm - INFO   - ==> Iteration [  2][ 300 /  390]: {'process_time': 84.0437, 'prec1': [79.776], 'prec5': [99.0807], 'load_time': 15.9563}
+2019-09-30 10:59:40,703 - algorithms.Algorithm - INFO   - ==> Iteration [  2][ 350 /  390]: {'process_time': 84.1758, 'prec1': [79.8616], 'prec5': [99.1205], 'load_time': 15.8242}
+2019-09-30 10:59:41,457 - algorithms.Algorithm - INFO   - ==> Training stats: {'process_time': 84.5473, 'prec1': [79.9405], 'prec5': [99.1136], 'load_time': 15.4527}
+2019-09-30 10:59:41,538 - algorithms.Algorithm - INFO   - Evaluating: CIFAR10_MultLayerClassifier_on_RotNet_NIN4blocks_Conv2_feats
+2019-09-30 10:59:41,538 - algorithms.Algorithm - INFO   - ==> Dataset: cifar10_test [78 images]
+2019-09-30 10:59:43,166 - algorithms.Algorithm - INFO   - ==> Results: {'process_time': 81.4702, 'prec1': [82.3576], 'prec5': [99.288], 'load_time': 18.5298}
+2019-09-30 10:59:43,167 - algorithms.Algorithm - INFO   - ==> Evaluation stats: {'process_time': 81.4702, 'prec1': [82.3576], 'prec5': [99.288], 'load_time': 18.5298}
+2019-09-30 10:59:43,224 - algorithms.Algorithm - INFO   - ==> Best results w.r.t. prec1 metric: epoch: 2 - {'process_time': 81.4702, 'prec1': [82.3576], 'prec5': [99.288], 'load_time': 18.5298}
+2019-09-30 10:59:43,225 - algorithms.Algorithm - INFO   - Training epoch [  3 / 100]
+2019-09-30 10:59:43,225 - algorithms.Algorithm - INFO   - ==> Set to classifier optimizer lr = 0.1000000000
+2019-09-30 10:59:43,225 - algorithms.Algorithm - INFO   - Training: CIFAR10_MultLayerClassifier_on_RotNet_NIN4blocks_Conv2_feats
+2019-09-30 10:59:44,454 - algorithms.Algorithm - INFO   - ==> Iteration [  3][  50 /  390]: {'process_time': 83.9163, 'prec1': [81.2031], 'prec5': [99.2656], 'load_time': 16.0837}
+2019-09-30 10:59:45,477 - algorithms.Algorithm - INFO   - ==> Iteration [  3][ 100 /  390]: {'process_time': 84.2491, 'prec1': [81.4219], 'prec5': [99.2344], 'load_time': 15.7509}
+2019-09-30 10:59:46,377 - algorithms.Algorithm - INFO   - ==> Iteration [  3][ 150 /  390]: {'process_time': 85.1859, 'prec1': [81.6094], 'prec5': [99.2448], 'load_time': 14.8141}
+2019-09-30 10:59:47,268 - algorithms.Algorithm - INFO   - ==> Iteration [  3][ 200 /  390]: {'process_time': 85.7943, 'prec1': [81.7383], 'prec5': [99.2656], 'load_time': 14.2057}
+2019-09-30 10:59:48,214 - algorithms.Algorithm - INFO   - ==> Iteration [  3][ 250 /  390]: {'process_time': 85.7433, 'prec1': [81.8469], 'prec5': [99.2531], 'load_time': 14.2567}
+2019-09-30 10:59:49,222 - algorithms.Algorithm - INFO   - ==> Iteration [  3][ 300 /  390]: {'process_time': 85.548, 'prec1': [81.8542], 'prec5': [99.2135], 'load_time': 14.452}
+2019-09-30 10:59:50,226 - algorithms.Algorithm - INFO   - ==> Iteration [  3][ 350 /  390]: {'process_time': 85.8141, 'prec1': [82.0402], 'prec5': [99.221], 'load_time': 14.1859}
+2019-09-30 10:59:50,989 - algorithms.Algorithm - INFO   - ==> Training stats: {'process_time': 86.2002, 'prec1': [82.1204], 'prec5': [99.2427], 'load_time': 13.7998}
+2019-09-30 10:59:51,049 - algorithms.Algorithm - INFO   - Evaluating: CIFAR10_MultLayerClassifier_on_RotNet_NIN4blocks_Conv2_feats
+2019-09-30 10:59:51,049 - algorithms.Algorithm - INFO   - ==> Dataset: cifar10_test [78 images]
+2019-09-30 10:59:52,565 - algorithms.Algorithm - INFO   - ==> Results: {'process_time': 82.3409, 'prec1': [84.3552], 'prec5': [99.2979], 'load_time': 17.6591}
+2019-09-30 10:59:52,565 - algorithms.Algorithm - INFO   - ==> Evaluation stats: {'process_time': 82.3409, 'prec1': [84.3552], 'prec5': [99.2979], 'load_time': 17.6591}
+2019-09-30 10:59:52,619 - algorithms.Algorithm - INFO   - ==> Best results w.r.t. prec1 metric: epoch: 3 - {'process_time': 82.3409, 'prec1': [84.3552], 'prec5': [99.2979], 'load_time': 17.6591}
+2019-09-30 10:59:52,619 - algorithms.Algorithm - INFO   - Training epoch [  4 / 100]
+2019-09-30 10:59:52,619 - algorithms.Algorithm - INFO   - ==> Set to classifier optimizer lr = 0.1000000000
+2019-09-30 10:59:52,619 - algorithms.Algorithm - INFO   - Training: CIFAR10_MultLayerClassifier_on_RotNet_NIN4blocks_Conv2_feats
+2019-09-30 10:59:53,871 - algorithms.Algorithm - INFO   - ==> Iteration [  4][  50 /  390]: {'process_time': 82.0184, 'prec1': [83.875], 'prec5': [99.5313], 'load_time': 17.9816}
+2019-09-30 10:59:54,767 - algorithms.Algorithm - INFO   - ==> Iteration [  4][ 100 /  390]: {'process_time': 84.4116, 'prec1': [83.4766], 'prec5': [99.4922], 'load_time': 15.5884}
+2019-09-30 10:59:55,603 - algorithms.Algorithm - INFO   - ==> Iteration [  4][ 150 /  390]: {'process_time': 85.7607, 'prec1': [83.5469], 'prec5': [99.474], 'load_time': 14.2393}
+2019-09-30 10:59:56,428 - algorithms.Algorithm - INFO   - ==> Iteration [  4][ 200 /  390]: {'process_time': 86.5625, 'prec1': [83.4492], 'prec5': [99.4492], 'load_time': 13.4375}
+2019-09-30 10:59:57,245 - algorithms.Algorithm - INFO   - ==> Iteration [  4][ 250 /  390]: {'process_time': 86.8566, 'prec1': [83.6031], 'prec5': [99.4563], 'load_time': 13.1434}
+2019-09-30 10:59:58,075 - algorithms.Algorithm - INFO   - ==> Iteration [  4][ 300 /  390]: {'process_time': 87.2313, 'prec1': [83.651], 'prec5': [99.4479], 'load_time': 12.7687}
+2019-09-30 10:59:58,923 - algorithms.Algorithm - INFO   - ==> Iteration [  4][ 350 /  390]: {'process_time': 87.2886, 'prec1': [83.5379], 'prec5': [99.4107], 'load_time': 12.7114}
+2019-09-30 10:59:59,672 - algorithms.Algorithm - INFO   - ==> Training stats: {'process_time': 87.452, 'prec1': [83.4419], 'prec5': [99.3906], 'load_time': 12.548}
+2019-09-30 10:59:59,740 - algorithms.Algorithm - INFO   - Evaluating: CIFAR10_MultLayerClassifier_on_RotNet_NIN4blocks_Conv2_feats
+2019-09-30 10:59:59,741 - algorithms.Algorithm - INFO   - ==> Dataset: cifar10_test [78 images]
+2019-09-30 11:00:01,268 - algorithms.Algorithm - INFO   - ==> Results: {'process_time': 85.207, 'prec1': [84.8002], 'prec5': [99.4363], 'load_time': 14.793}
+2019-09-30 11:00:01,268 - algorithms.Algorithm - INFO   - ==> Evaluation stats: {'process_time': 85.207, 'prec1': [84.8002], 'prec5': [99.4363], 'load_time': 14.793}
+2019-09-30 11:00:01,323 - algorithms.Algorithm - INFO   - ==> Best results w.r.t. prec1 metric: epoch: 4 - {'process_time': 85.207, 'prec1': [84.8002], 'prec5': [99.4363], 'load_time': 14.793}
+2019-09-30 11:00:01,323 - algorithms.Algorithm - INFO   - Training epoch [  5 / 100]
+2019-09-30 11:00:01,323 - algorithms.Algorithm - INFO   - ==> Set to classifier optimizer lr = 0.1000000000
+2019-09-30 11:00:01,323 - algorithms.Algorithm - INFO   - Training: CIFAR10_MultLayerClassifier_on_RotNet_NIN4blocks_Conv2_feats
+2019-09-30 11:00:02,399 - algorithms.Algorithm - INFO   - ==> Iteration [  5][  50 /  390]: {'process_time': 88.3679, 'prec1': [84.4531], 'prec5': [99.3438], 'load_time': 11.6321}
+2019-09-30 11:00:03,298 - algorithms.Algorithm - INFO   - ==> Iteration [  5][ 100 /  390]: {'process_time': 88.1226, 'prec1': [84.2109], 'prec5': [99.4297], 'load_time': 11.8774}
+2019-09-30 11:00:04,152 - algorithms.Algorithm - INFO   - ==> Iteration [  5][ 150 /  390]: {'process_time': 87.8888, 'prec1': [84.1927], 'prec5': [99.4271], 'load_time': 12.1112}
+2019-09-30 11:00:04,972 - algorithms.Algorithm - INFO   - ==> Iteration [  5][ 200 /  390]: {'process_time': 88.1249, 'prec1': [84.0703], 'prec5': [99.4258], 'load_time': 11.8751}
+2019-09-30 11:00:05,789 - algorithms.Algorithm - INFO   - ==> Iteration [  5][ 250 /  390]: {'process_time': 88.1878, 'prec1': [84.3219], 'prec5': [99.4281], 'load_time': 11.8122}

@@ -19,13 +19,10 @@ import csv
 from pdb import set_trace as breakpoint
 
 # Set the paths of the datasets here.
-_CIFAR_DATASET_DIR = './datasets/CIFAR'
+_CIFAR_DATASET_DIR = 'mnt/dataset/CIFAR'
+#_CIFAR_DATASET_DIR = './datasets/CIFAR'
 _IMAGENET_DATASET_DIR = './datasets/IMAGENET/ILSVRC2012'
 _PLACES205_DATASET_DIR = './datasets/Places205'
-
-'''#Download using torchvision
-torchvision.datasets.CIFAR10(_CIFAR_DATASET_DIR, train=True, transform=None, target_transform=None, download=True)
-'''
 
 def buildLabelIndex(labels):
     label2inds = {}
@@ -158,7 +155,7 @@ class GenericDataset(data.Dataset):
             self.transform = transforms.Compose(transform)
             self.data = datasets.__dict__[self.dataset_name.upper()](
                 _CIFAR_DATASET_DIR, train=self.split=='train',
-                download=True, transform=self.transform)
+                download=False, transform=self.transform)
         else:
             raise ValueError('Not recognized dataset {0}'.format(dname))
         
